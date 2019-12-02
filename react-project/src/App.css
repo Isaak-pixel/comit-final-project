@@ -1,4 +1,128 @@
-.header {
+
+* {
+  background-color: #353535;
+  color: white;
+}
+
+.heading:nth-of-type(even) {
+  color:skyblue;
+}
+
+header {
+  border-bottom: 5px dotted skyblue;
+}
+
+h1, nav{
   text-align: center;
 }
 
+nav, a {
+  margin-top: 10px;
+  background-color: #292929;
+  padding: 10px;
+}
+
+nav {
+  border-top: 3px dotted skyblue;
+  border-bottom: 3px dotted skyblue;
+}
+
+nav a {
+  text-decoration: none;
+  font-size: 150%;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+nav a:hover {
+  color: skyblue;
+  background-color: #222222;
+}
+
+.errorLink:hover {
+  color: skyblue;
+}
+
+.error {
+  text-align: center;
+  color: white;
+}
+
+.pageTitle {
+  font-size: 200%;
+  padding-left: 10px;
+  padding-bottom: 20px;
+  border-bottom: 7px dotted skyblue;  
+}
+
+.firstLetter {
+  color: skyblue;
+  font-size: 150%;
+}
+
+.menuTitle {
+  margin-left: 10px;
+  margin-top: 1em;
+  font-size: 125%;
+}
+
+li {
+  list-style: none;
+}
+
+ul li::before {
+  content: "\2022";
+  color: skyblue;
+  font-weight: bold;
+  font-size: 150%;
+  display: inline-block; 
+  width: 1.25em;
+  margin-left: -1em;
+}
+
+.menuDesc {
+  margin-left: 10px;
+}
+
+.toppings {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px;
+}
+
+.toppings li:nth-last-of-type(n+1) {
+  margin-left: 50px;
+}
+
+.toppings li:first-of-type {
+  margin-left: 0px;
+}
+
+footer {
+  text-align: center;
+  color:skyblue;
+  border-top: 3px dotted skyblue;
+  padding: 5px;
+}
+
+.formTitle {
+  margin-left: 10px;
+  margin-top: 1em;
+  font-size: 115%;
+}
+
+::placeholder {
+  color: white;
+}
+
+::-webkit-input-placeholder {
+  color: white;
+}
+
+:-moz-placeholder {
+  color: white;
+}
+
+form {
+  margin-left: 10px;
+}
