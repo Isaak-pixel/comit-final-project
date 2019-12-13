@@ -112,17 +112,47 @@ footer {
 }
 
 ::placeholder {
-  color: white;
+  color: lightgrey;
 }
 
 ::-webkit-input-placeholder {
-  color: white;
+  color: lightgrey;
 }
 
 :-moz-placeholder {
-  color: white;
+  color: lightgrey;
 }
 
 form {
   margin-left: 10px;
+}
+
+form label {
+  display: block;
+  font-weight: bold;
+  font-size: 115%;
+}
+
+form input[type="text"] {
+  border-radius: 3px;
+  border: 2px solid skyblue;
+  width: 20%;
+}
+
+form .toppingClass {
+  display: inline;
+}
+
+.contactInfo p {
+  margin-left: 10px;
+  font-size: 150%;
+}
+
+.symbol {
+  font-size: 250%;
+  color: skyblue;
+}
+
+.errorMessage {
+  color: tomato;
 }

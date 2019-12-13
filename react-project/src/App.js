@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import logo from './logo.svg';
 import './App.css';
 import {
@@ -9,6 +10,7 @@ import {
 } from "react-router-dom";
 
 export default function App() {
+
   return (
     //Creating Routes to use paths for linking the different pages of the site. 
     <Router>
@@ -60,6 +62,57 @@ export default function App() {
 
 //Code for the 'Home'/index page and what will appear on it. The main form will also appear here
 function Home() {
+
+  let [fName, fNameSet] = React.useState("");
+  let [lName, lNameSet] = React.useState("");
+  let [address, addressSet] = React.useState("");
+  let [phone, phoneSet] = React.useState("");
+  let [email, emailSet] = React.useState("");
+  let [dough, doughSet] = React.useState("");
+  let [size, sizeSet] = React.useState("");
+
+
+  function handlefName(event) {
+    fNameSet(event.currentTarget.value);
+  }
+
+  function handlelName(event) {
+    lNameSet(event.currentTarget.value);
+  }
+
+  function handleAddress(event) {
+    addressSet(event.currentTarget.value);
+  }
+
+  function handlePhone(event) {
+    phoneSet(event.currentTarget.value);
+  }
+
+  function handleEmail(event) {
+    emailSet(event.currentTarget.value);
+  }
+
+  function handleDough(event) {
+    doughSet(event.currentTarget.value);
+  }
+
+  function handleSize(event) {
+    sizeSet(event.currentTarget.value);
+  }
+
+  const gst = 0.05; //5% GST
+  const pst = 0.06; //6% PST
+
+  let subtotal = 0;
+  let total = 0;
+
+  let totalGst = (subtotal * gst);
+  let totalPst = (subtotal * pst);
+
+  let numOfToppings = (document.querySelectorAll('input[type="checkbox"]:checked').length);
+
+  let phoneReg = /[0-9]{3}-[0-9]{3}-[0-9]{4}/;
+
   return (
     <div className="header">
       <nav>
@@ -73,11 +126,64 @@ function Home() {
       menu and give us a call! Or fill out the form below and we will send you an email to confirm your order.</h3>
 
       <form>
-        <p id="fNameID"><label for="fName">First Name:</label> <input type="text" name="fNameID" id="fNameID" placeholder="First Name" /></p>
-        <p id="lNameID"><label for="lName">Last Name:</label> <input type="text" name="lNameID" id="lNameID" placeholder="Last Name" /></p>
-        <p id="addressID"><label for="addressID">Address:</label> <input type="text" name="addressID" id="addressID" placeholder="Address" /></p>
-        <p id="phoneID"><label for="phoneID">Phone:</label> <input type="text" name="phoneID" id="phoneID" placeholder="Phone" maxLength="10"/></p>
-        <p id="emailID"><label for="emailID">Email:</label> <input type="text" name="emailID" id="emailID" placeholder="Email" /></p>
+        <p id="fNameClass"><label for="fName">First Name:</label> 
+        <input type="text" className="fNameID" id="fNameID" placeholder="First Name" onChange={handlefName} value={fName} />
+        {fName.match(/[a-zA-Z]/) == null  && <strong><span className="errorMessage"> -- Error, invalid first name entered</span></strong>}</p>
+
+        <p id="lNameClass"><label for="lName">Last Name:</label> 
+        <input type="text" className="lNameID" id="lNameID" placeholder="Last Name" onChange={handlelName} value={lName} />
+        {lName.match(/[a-zA-Z]/) == null && <strong><span className="errorMessage"> -- Error, invalid last name entered</span></strong>}</p>
+
+        <p id="addressClass"><label for="addressID">Delivery Address:</label> 
+        <input type="text" className="addressID" id="addressID" placeholder="Address" onChange={handleAddress} value={address} />
+        {address == "" && <strong><span className="errorMessage"> -- Error, no address entered</span></strong>}</p>
+
+        <p id="phoneClass"><label for="phoneID">Phone Number:</label> 
+        <input type="text" className="phoneID" id="phoneID" placeholder="Phone" onChange={handlePhone} value={phone} />
+        {phone.match(/[0-9]{3}-[0-9]{3}-[0-9]{4}/) == null && <strong><span className="errorMessage"> -- Error, invalid phone number</span></strong>}</p>
+
+        <p id="emailClass"><label for="emailID">Email Address:</label> 
+        <input type="text" className="emailID" id="emailID" placeholder="Email" onChange={handleEmail} value={email}/>
+        {email.match(/\S+@\S+\.\S+/) == null && <strong><span className="errorMessage"> -- Error, invalid email</span></strong>}</p>
+
+        <p id="sizeClass"><label for="pizzaSize"><span className="firstLetter">S</span>elect your pizza size</label></p>
+        <p><input type="radio" name="pizzaSize" id="sizeS" /> Small (9") ...... $7.00</p>
+        <p><input type="radio" name="pizzaSize" id="sizeM" /> Medium ("12") ...... $9.00</p>
+        <p><input type="radio" name="pizzaSize" id="sizeL" /> Large (15") ...... $11.00</p>
+        <p><input type="radio" name="pizzaSize" id="sizeXL" /> X-Large (18") ...... $13.00</p>
+
+        <p id="doughClass"><label for="doughType"><span className="firstLetter">S</span>elect the type of dough you want</label></p>
+        <p><input type="radio" name="doughType" id="dough1" /> Original</p>
+        <p><input type="radio" name="doughType" id="dough2" /> Whole Wheat</p>
+        <p><input type="radio" name="doughType" id="dough3" /> Rye</p>
+        <p><input type="radio" name="doughType" id="dough4" /> Gluten Free</p>
+
+        <div id="toppingClass">
+          <label for="toppingsList"><span className="firstLetter">S</span>elect your toppings that you want ($0.50 each)</label>
+          Pepperoni<input type="checkbox" name="topping1" id="topping1" />
+          &nbsp;&nbsp;&nbsp; Extra Mozzerella Cheese<input type="checkbox" name="topping2" id="topping2" />
+          &nbsp;&nbsp;&nbsp; Cheddar Cheese<input type="checkbox" name="topping3" id="topping3" />
+          &nbsp;&nbsp;&nbsp; Feta Cheese<input type="checkbox" name="topping4" id="topping4" />
+          &nbsp;&nbsp;&nbsp; Onions<input type="checkbox" name="topping5" id="topping5" />
+          &nbsp;&nbsp;&nbsp; Sausages<input type="checkbox" name="topping6" id="topping6" />
+          &nbsp;&nbsp;&nbsp; Ground Beef<input type="checkbox" name="topping7" id="topping7" />
+          &nbsp;&nbsp;&nbsp; Bacon<input type="checkbox" name="topping8" id="topping8" />
+          &nbsp;&nbsp;&nbsp; Peppers<input type="checkbox" name="topping9" id="topping9" />
+          &nbsp;&nbsp;&nbsp; Mushrooms<input type="checkbox" name="topping10" id="topping10" />
+          &nbsp;&nbsp;&nbsp; Olives<input type="checkbox" name="topping11" id="topping11" />
+          &nbsp;&nbsp;&nbsp; Pineapples<input type="checkbox" name="topping12" id="topping12" />
+          &nbsp;&nbsp;&nbsp; Ham<input type="checkbox" name="topping13" id="topping13" />
+          &nbsp;&nbsp;&nbsp; Chicken<input type="checkbox" name="topping14" id="topping14" />
+          &nbsp;&nbsp;&nbsp; Basil<input type="checkbox" name="topping15" id="topping15" />
+          &nbsp;&nbsp;&nbsp; Kale<input type="checkbox" name="topping16" id="topping16" />
+          &nbsp;&nbsp;&nbsp; Anchovies<input type="checkbox" name="topping17" id="topping17" />
+          &nbsp;&nbsp;&nbsp; Tomatoes<input type="checkbox" name="topping18" id="topping18" />
+        </div>
+
+        <p><label>Subtotal: </label><input type="text" name="tSubtotal" id="tSubtotal" readOnly="true"/></p>
+        <p><label>GST: </label><input type="text" name="tGST" id="tGST" readOnly="true"/></p>
+        <p><label>PST: </label><input type="text" name="tPST" id="tPST" readOnly="true"/></p>
+        <p><label>Grand Total: </label><input type="text" name="tTotal" id="tTtoal" readOnly="true"/></p>
       </form>
     </div>
   );
@@ -85,7 +191,7 @@ function Home() {
 
 
 
-//Code for the 'Menu' page and what will appear on it
+//Code for the 'Menu' page and what will appear on it. This has a list of the menu with prices. 
 function Menu() {
   return (
     <div className="header">
@@ -116,7 +222,7 @@ function Menu() {
         <li>Original</li>
         <li>Whole Wheat</li>
         <li>Rye</li>
-        <li>Gluten Free ..... (Add $1.00)</li>
+        <li>Gluten Free</li>
       </ul>
 
       {/* The looooong lsit of toppings */}
@@ -172,6 +278,12 @@ function Contact() {
       </nav>
 
       <h2 className="pageTitle"><span className="firstLetter">C</span>ontact Us</h2>
+
+      <div className="contactInfo">
+        <p><span className="symbol">&#9742;</span> - Phone: (306) 123-4567</p>
+        <p><span className="symbol">&#9993;</span> - Email: pp-pizzaplace-questions@mail.com</p>
+        <p><span className="symbol">&#127968;</span> - Address: 123 Fake St. Saskatoon, SK</p>
+      </div>
     </div>
   );
 }
