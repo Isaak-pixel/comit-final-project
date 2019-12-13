@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/comit-final-project/static/css/main.7d627790.chunk.css",
-    "main.js": "/comit-final-project/static/js/main.8abec078.chunk.js",
-    "main.js.map": "/comit-final-project/static/js/main.8abec078.chunk.js.map",
-    "runtime-main.js": "/comit-final-project/static/js/runtime-main.4d3e32c2.js",
-    "runtime-main.js.map": "/comit-final-project/static/js/runtime-main.4d3e32c2.js.map",
-    "static/js/2.b648675b.chunk.js": "/comit-final-project/static/js/2.b648675b.chunk.js",
-    "static/js/2.b648675b.chunk.js.map": "/comit-final-project/static/js/2.b648675b.chunk.js.map",
-    "index.html": "/comit-final-project/index.html",
-    "precache-manifest.bed623fb7f07f1ee9cb1d79b774b9a74.js": "/comit-final-project/precache-manifest.bed623fb7f07f1ee9cb1d79b774b9a74.js",
-    "service-worker.js": "/comit-final-project/service-worker.js",
-    "static/css/main.7d627790.chunk.css.map": "/comit-final-project/static/css/main.7d627790.chunk.css.map",
-    "static/media/logo.svg": "/comit-final-project/static/media/logo.25bf045c.svg"
+    "main.css": "/comit-final-project/react-project/static/css/main.7d627790.chunk.css",
+    "main.js": "/comit-final-project/react-project/static/js/main.3875c616.chunk.js",
+    "main.js.map": "/comit-final-project/react-project/static/js/main.3875c616.chunk.js.map",
+    "runtime-main.js": "/comit-final-project/react-project/static/js/runtime-main.57d20436.js",
+    "runtime-main.js.map": "/comit-final-project/react-project/static/js/runtime-main.57d20436.js.map",
+    "static/js/2.b648675b.chunk.js": "/comit-final-project/react-project/static/js/2.b648675b.chunk.js",
+    "static/js/2.b648675b.chunk.js.map": "/comit-final-project/react-project/static/js/2.b648675b.chunk.js.map",
+    "index.html": "/comit-final-project/react-project/index.html",
+    "precache-manifest.bdd79d13cbad1860cba6e1c363798318.js": "/comit-final-project/react-project/precache-manifest.bdd79d13cbad1860cba6e1c363798318.js",
+    "service-worker.js": "/comit-final-project/react-project/service-worker.js",
+    "static/css/main.7d627790.chunk.css.map": "/comit-final-project/react-project/static/css/main.7d627790.chunk.css.map",
+    "static/media/logo.svg": "/comit-final-project/react-project/static/media/logo.25bf045c.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.4d3e32c2.js",
+    "static/js/runtime-main.57d20436.js",
     "static/js/2.b648675b.chunk.js",
     "static/css/main.7d627790.chunk.css",
-    "static/js/main.8abec078.chunk.js"
+    "static/js/main.3875c616.chunk.js"
   ]
 }
