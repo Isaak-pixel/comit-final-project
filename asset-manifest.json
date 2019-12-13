@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/comit-final-project/react=project/static/css/main.7d627790.chunk.css",
-    "main.js": "/comit-final-project/react=project/static/js/main.5335194a.chunk.js",
-    "main.js.map": "/comit-final-project/react=project/static/js/main.5335194a.chunk.js.map",
-    "runtime-main.js": "/comit-final-project/react=project/static/js/runtime-main.714f4aa3.js",
-    "runtime-main.js.map": "/comit-final-project/react=project/static/js/runtime-main.714f4aa3.js.map",
-    "static/js/2.b648675b.chunk.js": "/comit-final-project/react=project/static/js/2.b648675b.chunk.js",
-    "static/js/2.b648675b.chunk.js.map": "/comit-final-project/react=project/static/js/2.b648675b.chunk.js.map",
-    "index.html": "/comit-final-project/react=project/index.html",
-    "precache-manifest.b88b01c3492c2097e1dd5e2633125eaf.js": "/comit-final-project/react=project/precache-manifest.b88b01c3492c2097e1dd5e2633125eaf.js",
-    "service-worker.js": "/comit-final-project/react=project/service-worker.js",
-    "static/css/main.7d627790.chunk.css.map": "/comit-final-project/react=project/static/css/main.7d627790.chunk.css.map",
-    "static/media/logo.svg": "/comit-final-project/react=project/static/media/logo.25bf045c.svg"
+    "main.css": "/comit-final-project/react-project/static/css/main.7d627790.chunk.css",
+    "main.js": "/comit-final-project/react-project/static/js/main.034c8478.chunk.js",
+    "main.js.map": "/comit-final-project/react-project/static/js/main.034c8478.chunk.js.map",
+    "runtime-main.js": "/comit-final-project/react-project/static/js/runtime-main.57d20436.js",
+    "runtime-main.js.map": "/comit-final-project/react-project/static/js/runtime-main.57d20436.js.map",
+    "static/js/2.b648675b.chunk.js": "/comit-final-project/react-project/static/js/2.b648675b.chunk.js",
+    "static/js/2.b648675b.chunk.js.map": "/comit-final-project/react-project/static/js/2.b648675b.chunk.js.map",
+    "index.html": "/comit-final-project/react-project/index.html",
+    "precache-manifest.ea3beec4e0bd0f4dc2cd62f3510ab6c9.js": "/comit-final-project/react-project/precache-manifest.ea3beec4e0bd0f4dc2cd62f3510ab6c9.js",
+    "service-worker.js": "/comit-final-project/react-project/service-worker.js",
+    "static/css/main.7d627790.chunk.css.map": "/comit-final-project/react-project/static/css/main.7d627790.chunk.css.map",
+    "static/media/logo.svg": "/comit-final-project/react-project/static/media/logo.25bf045c.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.714f4aa3.js",
+    "static/js/runtime-main.57d20436.js",
     "static/js/2.b648675b.chunk.js",
     "static/css/main.7d627790.chunk.css",
-    "static/js/main.5335194a.chunk.js"
+    "static/js/main.034c8478.chunk.js"
   ]
 }
